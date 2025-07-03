@@ -132,7 +132,11 @@ const ContactSection = () => {
               Send us a Message
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://getform.io/f/bxoyzpqa"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block font-apple font-medium text-foreground mb-2">

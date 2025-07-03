@@ -67,7 +67,7 @@ const StorySection = () => {
                 </svg>
               </div>
               <h4 className="font-apple font-semibold text-xl text-foreground mb-2">Integrity</h4>
-              <p className="font-apple text-muted-foreground">Building trust through transparent and ethical practices</p>
+              <p className="font-apple text-muted-foreground">Building trust through transparency </p>
             </div>
 
             <div className="text-center">

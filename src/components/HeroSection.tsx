@@ -11,9 +11,6 @@ const HeroSection = () => {
           Advisory Partner
         </h1>
         
-        <p className="font-apple text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          "You focus on the hardwork, we will ensure compliance"
-        </p>
         
         <p className="font-apple text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
           Backed by over 25 years of experience in tax planning and auditing, we've evolved into a new age legal, compliance and auditing consultancy catering specifically to start-ups and tech companies.

@@ -15,7 +15,7 @@ const AboutSection = () => {
                 <strong>Empowering Business Success with 25+ Years of Financial Expertise</strong>
               </p>
               <p className="font-apple text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-4">
-                At Sumegh Consultancy, we bring over two decades of trusted experience in accounting, taxation, and corporate advisory. Headquartered in New Delhi, we proudly serve clients across India—and increasingly, beyond—with a global standard of service and precision.
+                At Sumegh, we bring over two decades of trusted experience in accounting, taxation, and corporate advisory. 
               </p>
             </div>
 
@@ -33,7 +33,7 @@ const AboutSection = () => {
                   <li>• 25+ years of combined domain excellence</li>
                 </ul>
                 <p className="font-apple text-muted-foreground mt-4 text-sm italic">
-                  Our professionals work at the intersection of finance, law, and strategy—ensuring compliance while enabling growth.
+                  Our professionals work at the intersection of finance, law, and strategy, ensuring compliance while enabling growth.
                 </p>
               </div>
 
@@ -76,7 +76,7 @@ const AboutSection = () => {
                 <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Our Promise – Compliance. Clarity. Confidence.</h3>
                 <div className="bg-muted/50 border-l-4 border-foreground pl-6 py-4 mb-4 rounded-r-lg">
                   <blockquote className="font-apple text-lg text-foreground font-medium italic">
-                    "You focus on building your business—we'll ensure you stay compliant."
+                    "You focus on building, let us ensure compliance"
                   </blockquote>
                 </div>
                 <p className="font-apple text-muted-foreground text-sm">
