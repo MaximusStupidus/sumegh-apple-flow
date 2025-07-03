@@ -57,7 +57,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-apple font-semibold text-lg text-foreground mb-1">Office Address</h4>
-                    <p className="font-apple text-muted-foreground">Karampura Office, New Delhi, India</p>
+                    <p className="font-apple text-muted-foreground">201-202, Magnum House-II<br />Commercial Complex<br />Karampura, Delhi 110015</p>
                   </div>
                 </div>
 
@@ -70,7 +70,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-apple font-semibold text-lg text-foreground mb-1">Phone Number</h4>
-                    <p className="font-apple text-muted-foreground">+91 XXXXX XXXXX</p>
+                    <p className="font-apple text-muted-foreground">011-25920165-166</p>
                   </div>
                 </div>
 
@@ -83,7 +83,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-apple font-semibold text-lg text-foreground mb-1">Email Address</h4>
-                    <p className="font-apple text-muted-foreground">info@sumeghconsultancy.com</p>
+                    <p className="font-apple text-muted-foreground">sumeghconsultancy@gmail.com</p>
                   </div>
                 </div>
 
