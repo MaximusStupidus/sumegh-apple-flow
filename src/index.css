@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Apple-inspired design system with elegant colors and gradients */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Core Apple-inspired color palette */
+    --background: 0 0% 99%;
+    --foreground: 210 24% 16%;
+    
+    /* Card and surface colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 210 24% 16%;
+    --card-hover: 210 20% 98%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 24% 16%;
+    
+    /* Apple blue primary */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 100% 45%;
+    --primary-light: 210 100% 95%;
+    
+    /* Apple gray secondary */
+    --secondary: 210 16% 93%;
+    --secondary-foreground: 210 24% 16%;
+    --secondary-hover: 210 16% 88%;
+    
+    /* Muted tones */
+    --muted: 210 16% 96%;
+    --muted-foreground: 210 12% 55%;
+    
+    /* Accent colors */
+    --accent: 210 16% 96%;
+    --accent-foreground: 210 24% 16%;
+    
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 210 16% 88%;
+    --input: 210 16% 93%;
+    --ring: 210 100% 50%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Apple design tokens */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    
+    /* Apple gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--background)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card-hover)));
+    
+    /* Apple shadows */
+    --shadow-apple: 0 4px 16px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 1px 3px hsl(210 12% 55% / 0.1), 0 1px 2px hsl(210 12% 55% / 0.06);
+    --shadow-button: 0 1px 2px hsl(210 12% 55% / 0.05);
+    --shadow-floating: 0 8px 32px hsl(210 12% 55% / 0.12);
+    
+    /* Apple transitions */
+    --transition-apple: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +131,48 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-apple antialiased;
+  }
+}
+
+@layer components {
+  /* Apple-style button variants */
+  .btn-apple {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply btn-apple bg-primary text-primary-foreground hover:bg-primary/90 shadow-button hover:shadow-apple focus:ring-primary/50;
+  }
+  
+  .btn-secondary {
+    @apply btn-apple bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-button focus:ring-secondary/50;
+  }
+  
+  .btn-ghost {
+    @apply btn-apple bg-transparent text-foreground hover:bg-secondary/50 focus:ring-secondary/50;
+  }
+  
+  .btn-floating {
+    @apply btn-apple bg-card/80 backdrop-blur-md text-card-foreground hover:bg-card shadow-floating border border-border/20;
+  }
+  
+  /* Apple-style cards */
+  .card-apple {
+    @apply rounded-xl bg-card border border-border/50 shadow-card backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply card-apple hover:shadow-apple transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  /* Apple-style section spacing */
+  .section-padding {
+    @apply py-24 px-6 lg:px-8;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
   }
 }
