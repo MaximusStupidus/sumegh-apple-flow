@@ -135,6 +135,25 @@
   }
 }
 
+@layer utilities {
+  /* Apple-style shadows */
+  .shadow-apple {
+    box-shadow: var(--shadow-apple);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+}
+
 @layer components {
   /* Apple-style button variants */
   .btn-apple {
