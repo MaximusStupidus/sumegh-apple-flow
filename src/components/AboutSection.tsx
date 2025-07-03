@@ -1,10 +1,8 @@
-import teamImage from '../assets/team-image.jpg';
-
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding bg-muted/30">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Content */}
           <div className="space-y-8">
             <div>
@@ -58,18 +56,6 @@ const AboutSection = () => {
                 <p className="font-apple text-muted-foreground">From startups to established corporations</p>
               </div>
             </div>
-          </div>
-
-          {/* Image */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-apple">
-              <img 
-                src={teamImage} 
-                alt="Sumegh Consultancy Team" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent"></div>
           </div>
         </div>
       </div>
