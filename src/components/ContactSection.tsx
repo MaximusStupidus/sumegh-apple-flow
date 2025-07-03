@@ -9,6 +9,7 @@ const ContactSection = () => {
     service: '',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -20,9 +21,8 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    setIsSubmitted(true);
     console.log('Form submitted:', formData);
-    // You can add form submission logic here
   };
 
   return (
@@ -128,127 +128,144 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="card-apple p-8">
-            <h3 className="font-apple font-bold text-2xl text-foreground mb-6">
-              Send us a Message
-            </h3>
-            
-            <form
-              action="https://getform.io/f/bxoyzpqa"
-              method="POST"
-              className="space-y-6"
-            >
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block font-apple font-medium text-foreground mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block font-apple font-medium text-foreground mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="phone" className="block font-apple font-medium text-foreground mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block font-apple font-medium text-foreground mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="Your company name"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block font-apple font-medium text-foreground mb-2">
-                  Service Interest
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+            {!isSubmitted ? (
+              <>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-6">
+                  Send us a Message
+                </h3>
+                
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
                 >
-                  <option value="">Select a service</option>
-                  <option value="accounting">Accounting & Bookkeeping</option>
-                  <option value="tax">Tax Planning & Filing</option>
-                  <option value="audit">Audit Support</option>
-                  <option value="financial">Financial Planning</option>
-                  <option value="company">Company Registration</option>
-                  <option value="payroll">Payroll Processing</option>
-                  <option value="rbi">RBI Liasoning</option>
-                  <option value="startup">Startup Consulting</option>
-                  <option value="cfo">Virtual CFO Services</option>
-                  <option value="arbitration">Arbitration & Mediation</option>
-                </select>
-              </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block font-apple font-medium text-foreground mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block font-apple font-medium text-foreground mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
 
-              <div>
-                <label htmlFor="message" className="block font-apple font-medium text-foreground mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-vertical"
-                  placeholder="Tell us about your requirements..."
-                ></textarea>
-              </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block font-apple font-medium text-foreground mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        placeholder="+91 XXXXX XXXXX"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block font-apple font-medium text-foreground mb-2">
+                        Company Name
+                      </label>
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        placeholder="Your company name"
+                      />
+                    </div>
+                  </div>
 
-              <button
-                type="submit"
-                className="btn-primary w-full text-lg py-4"
-              >
-                Send Message
-              </button>
-            </form>
+                  <div>
+                    <label htmlFor="service" className="block font-apple font-medium text-foreground mb-2">
+                      Service Interest
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="accounting">Accounting & Bookkeeping</option>
+                      <option value="tax">Tax Planning & Filing</option>
+                      <option value="audit">Audit Support</option>
+                      <option value="financial">Financial Planning</option>
+                      <option value="company">Company Registration</option>
+                      <option value="payroll">Payroll Processing</option>
+                      <option value="rbi">RBI Liasoning</option>
+                      <option value="startup">Startup Consulting</option>
+                      <option value="cfo">Virtual CFO Services</option>
+                      <option value="arbitration">Arbitration & Mediation</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block font-apple font-medium text-foreground mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-apple focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-vertical"
+                      placeholder="Tell us about your requirements..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="btn-primary w-full text-lg py-4"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">
+                  Thank You!
+                </h3>
+                <p className="font-apple text-lg text-muted-foreground">
+                  Thanks for reaching out! We'll connect with you soon.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
