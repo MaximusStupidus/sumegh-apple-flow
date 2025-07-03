@@ -1,18 +1,9 @@
-import heroBg from '../assets/hero-bg.jpg';
-
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-light/80 to-background/90"></div>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-light/20 to-background">
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 pt-20">
         <h1 className="font-apple font-bold text-5xl md:text-7xl text-foreground mb-6 leading-tight">
           Your Trusted
           <span className="bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent"> Financial</span>

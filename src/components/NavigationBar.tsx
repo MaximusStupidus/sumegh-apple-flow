@@ -20,44 +20,44 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-card/90 backdrop-blur-md shadow-floating' : 'bg-card/70 backdrop-blur-sm'
-    } rounded-2xl border border-border/20 px-8 py-4`}>
-      <div className="flex items-center justify-between">
-        <div className="font-apple font-bold text-xl text-primary">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-card/95 backdrop-blur-md shadow-apple border-b border-border/20' : 'bg-card/80 backdrop-blur-sm'
+    } px-6 lg:px-8 py-4`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="font-apple font-bold text-2xl bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">
           Sumegh
         </div>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-1">
           <button 
             onClick={() => scrollToSection('about')}
-            className="btn-ghost text-sm font-medium hover:text-primary transition-colors"
+            className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200"
           >
             About Us
           </button>
           <button 
             onClick={() => scrollToSection('story')}
-            className="btn-ghost text-sm font-medium hover:text-primary transition-colors"
+            className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200"
           >
             Our Story
           </button>
           <button 
             onClick={() => scrollToSection('services')}
-            className="btn-ghost text-sm font-medium hover:text-primary transition-colors"
+            className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200"
           >
             Services
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="btn-primary text-sm"
+            className="ml-4 btn-primary text-sm px-6 py-2"
           >
             Contact
           </button>
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden btn-ghost">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button className="md:hidden p-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
