@@ -1,79 +1,87 @@
+import { Users, Briefcase, MapPin, Shield } from 'lucide-react';
+
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding bg-muted/30">
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div>
+        <div className="max-w-6xl mx-auto">
+          <div className="space-y-16">
+            {/* About Us Header */}
+            <div className="text-center">
               <h2 className="font-apple font-bold text-4xl md:text-5xl text-foreground mb-6">
                 About Us
               </h2>
-              <p className="font-apple text-xl text-muted-foreground leading-relaxed">
-                25+ years of trusted financial expertise serving businesses across India
+              <p className="font-apple text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                <strong>Empowering Business Success with 25+ Years of Financial Expertise</strong>
+              </p>
+              <p className="font-apple text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-4">
+                At Sumegh Consultancy, we bring over two decades of trusted experience in accounting, taxation, and corporate advisory. Headquartered in New Delhi, we proudly serve clients across India—and increasingly, beyond—with a global standard of service and precision.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
+              {/* Expert Team */}
               <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
                 <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+                  <Users className="w-8 h-8" />
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Expert Team</h3>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Expert Team – A Cross-Functional Financial Advisory Panel</h3>
                 <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• Qualified Chartered Accountants</li>
-                  <li>• Certified Company Secretaries</li>
-                  <li>• Experienced Legal Experts</li>
-                  <li>• 25+ years combined experience</li>
+                  <li>• Chartered Accountants with deep regulatory insight</li>
+                  <li>• Certified Company Secretaries ensuring legal integrity</li>
+                  <li>• Corporate Legal Experts with cross-border exposure</li>
+                  <li>• 25+ years of combined domain excellence</li>
+                </ul>
+                <p className="font-apple text-muted-foreground mt-4 text-sm italic">
+                  Our professionals work at the intersection of finance, law, and strategy—ensuring compliance while enabling growth.
+                </p>
+              </div>
+
+              {/* Comprehensive Services */}
+              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
+                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
+                  <Briefcase className="w-8 h-8" />
+                </div>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Comprehensive Services – 360° Financial Solutions</h3>
+                <ul className="font-apple text-muted-foreground space-y-2">
+                  <li>• End-to-End Bookkeeping & Strategic Financial Planning</li>
+                  <li>• Direct & Indirect Tax Advisory (GST, ITR, TDS)</li>
+                  <li>• Internal Audit, Risk Management & Corporate Law Compliance</li>
+                  <li>• Business Structuring, Loan Syndication & Project Financing</li>
+                </ul>
+                <p className="font-apple text-muted-foreground mt-4 text-sm italic">
+                  We adapt global best practices to local business needs—seamlessly.
+                </p>
+              </div>
+
+              {/* Based in Delhi */}
+              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
+                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
+                  <MapPin className="w-8 h-8" />
+                </div>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Based in Delhi, Serving the World</h3>
+                <ul className="font-apple text-muted-foreground space-y-2">
+                  <li>• Strategically located in New Delhi's business hub</li>
+                  <li>• Serving 100+ clients across India and international markets</li>
+                  <li>• Digitally enabled service delivery with secure document sharing</li>
+                  <li>• Real-time reporting tools accessible anywhere, anytime</li>
                 </ul>
               </div>
 
+              {/* Our Promise */}
               <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
                 <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+                  <Shield className="w-8 h-8" />
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Comprehensive Services</h3>
-                <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• Bookkeeping & Financial Planning</li>
-                  <li>• Tax Advisory & Compliance</li>
-                  <li>• Audit Support & Corporate Law</li>
-                  <li>• Project Financing Solutions</li>
-                </ul>
-              </div>
-
-              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
-                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Our Promise – Compliance. Clarity. Confidence.</h3>
+                <div className="bg-muted/50 border-l-4 border-foreground pl-6 py-4 mb-4 rounded-r-lg">
+                  <blockquote className="font-apple text-lg text-foreground font-medium italic">
+                    "You focus on building your business—we'll ensure you stay compliant."
+                  </blockquote>
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Delhi Based</h3>
-                <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• Located in New Delhi</li>
-                  <li>• Serving clients across India</li>
-                  <li>• Modern office facilities</li>
-                  <li>• Easy accessibility</li>
-                </ul>
-              </div>
-
-              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
-                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Our Promise</h3>
-                <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• "You focus on the hardwork,</li>
-                  <li>&nbsp;&nbsp;we ensure compliance"</li>
-                  <li>• Trusted by 100+ businesses</li>
-                  <li>• Tailored solutions for every client</li>
-                </ul>
+                <p className="font-apple text-muted-foreground text-sm">
+                  Trusted by a diverse portfolio of clients, we craft bespoke financial strategies aligned with your goals through a transparent, tech-enabled, client-first approach.
+                </p>
               </div>
             </div>
           </div>
