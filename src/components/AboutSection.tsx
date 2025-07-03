@@ -7,10 +7,16 @@ const AboutSection = () => {
           <div className="space-y-8">
             <div>
               <h2 className="font-apple font-bold text-4xl md:text-5xl text-foreground mb-6">
-                About Sumegh Consultancy
+                About Us
               </h2>
+              <p className="font-apple text-lg text-muted-foreground leading-relaxed mb-6">
+                Founded with a vision to simplify financial complexities for businesses, Sumegh Consultancy has been a trusted partner for over 25 years. We are a full-service financial advisory firm dedicated to helping businesses navigate the intricate world of compliance, taxation, and financial management.
+              </p>
+              <p className="font-apple text-lg text-muted-foreground leading-relaxed mb-6">
+                Our comprehensive suite of services includes bookkeeping, tax advisory, audit support, financial planning, project financing, and corporate law. We serve a diverse clientele ranging from emerging startups to established corporations, providing tailored solutions that align with each client's unique needs and goals.
+              </p>
               <p className="font-apple text-lg text-muted-foreground leading-relaxed">
-                Sumegh Consultancy is a trusted financial advisory firm with over 25 years of experience, offering end-to-end services in bookkeeping, tax advisory, audit support, financial planning, project financing, and corporate law.
+                With our motto "You focus on the hardwork, we will ensure compliance," we take the burden of regulatory requirements off your shoulders, allowing you to concentrate on growing your business. Our team of qualified Chartered Accountants, Company Secretaries, and legal experts brings deep industry knowledge and modern solutions to traditional financial challenges.
               </p>
             </div>
 
