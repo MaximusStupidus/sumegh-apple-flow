@@ -52,6 +52,12 @@ const NavigationBar = () => {
             Services
           </button>
           <button 
+            onClick={() => scrollToSection('blog')}
+            className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200"
+          >
+            Blog
+          </button>
+          <button 
             onClick={() => scrollToSection('contact')}
             className="ml-4 btn-primary text-sm px-6 py-2"
           >
