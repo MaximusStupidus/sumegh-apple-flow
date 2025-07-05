@@ -1,6 +1,16 @@
 import { Users, Briefcase, MapPin, Shield, Eye, Target } from 'lucide-react';
+import { useState } from 'react';
 
 const AboutSection = () => {
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
+
+  const toggleCard = (index: number) => {
+    setFlippedCards(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
   return (
     <section id="about" className="section-padding bg-muted/30">
       <div className="max-w-7xl mx-auto">
@@ -46,67 +56,251 @@ const AboutSection = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Expert Team */}
-              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
-                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <Users className="w-8 h-8" />
+              <div className="flip-card" onClick={() => toggleCard(0)}>
+                <div className={`flip-card-inner ${flippedCards.includes(0) ? 'flipped' : ''}`}>
+                  {/* Front Side */}
+                  <div className="flip-card-front">
+                    <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-4">
+                      <Users className="w-8 h-8" />
+                    </div>
+                    <h3 className="font-apple font-bold text-lg text-foreground text-center px-4 leading-tight">
+                      Expert Team – A Cross-Functional Financial Advisory Panel
+                    </h3>
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                        Click to learn more
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Back Side */}
+                  <div className="flip-card-back">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-apple font-bold text-sm text-foreground">
+                        Expert Team
+                      </h3>
+                      <button className="text-muted-foreground hover:text-foreground">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto scrollbar-visible">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2 pr-2">
+                        <ul className="space-y-1 text-left">
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Chartered Accountants with deep regulatory insight</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Certified Company Secretaries ensuring legal integrity</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Corporate Legal Experts with cross-border exposure</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>25+ years of combined domain excellence</span>
+                          </li>
+                        </ul>
+                        <p className="text-left mt-3 italic">
+                          Our professionals work at the intersection of finance, law, and strategy, ensuring compliance while enabling growth.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mt-4">
+                      <div className="text-xs text-primary font-medium">
+                        Click anywhere to close
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Expert Team – A Cross-Functional Financial Advisory Panel</h3>
-                <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• Chartered Accountants with deep regulatory insight</li>
-                  <li>• Certified Company Secretaries ensuring legal integrity</li>
-                  <li>• Corporate Legal Experts with cross-border exposure</li>
-                  <li>• 25+ years of combined domain excellence</li>
-                </ul>
-                <p className="font-apple text-muted-foreground mt-4 text-sm italic">
-                  Our professionals work at the intersection of finance, law, and strategy, ensuring compliance while enabling growth.
-                </p>
               </div>
 
               {/* Comprehensive Services */}
-              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
-                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <Briefcase className="w-8 h-8" />
+              <div className="flip-card" onClick={() => toggleCard(1)}>
+                <div className={`flip-card-inner ${flippedCards.includes(1) ? 'flipped' : ''}`}>
+                  {/* Front Side */}
+                  <div className="flip-card-front">
+                    <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-4">
+                      <Briefcase className="w-8 h-8" />
+                    </div>
+                    <h3 className="font-apple font-bold text-lg text-foreground text-center px-4 leading-tight">
+                      Comprehensive Services – 360° Financial Solutions
+                    </h3>
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                        Click to learn more
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Back Side */}
+                  <div className="flip-card-back">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-apple font-bold text-sm text-foreground">
+                        Comprehensive Services
+                      </h3>
+                      <button className="text-muted-foreground hover:text-foreground">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto scrollbar-visible">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2 pr-2">
+                        <ul className="space-y-1 text-left">
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>End-to-End Bookkeeping & Strategic Financial Planning</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Direct & Indirect Tax Advisory (GST, ITR, TDS)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Internal Audit, Risk Management & Corporate Law Compliance</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Business Structuring, Loan Syndication & Project Financing</span>
+                          </li>
+                        </ul>
+                        <p className="text-left mt-3 italic">
+                          We adapt global best practices to local business needs—seamlessly.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mt-4">
+                      <div className="text-xs text-primary font-medium">
+                        Click anywhere to close
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Comprehensive Services – 360° Financial Solutions</h3>
-                <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• End-to-End Bookkeeping & Strategic Financial Planning</li>
-                  <li>• Direct & Indirect Tax Advisory (GST, ITR, TDS)</li>
-                  <li>• Internal Audit, Risk Management & Corporate Law Compliance</li>
-                  <li>• Business Structuring, Loan Syndication & Project Financing</li>
-                </ul>
-                <p className="font-apple text-muted-foreground mt-4 text-sm italic">
-                  We adapt global best practices to local business needs—seamlessly.
-                </p>
               </div>
 
               {/* Based in Delhi */}
-              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
-                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <MapPin className="w-8 h-8" />
+              <div className="flip-card" onClick={() => toggleCard(2)}>
+                <div className={`flip-card-inner ${flippedCards.includes(2) ? 'flipped' : ''}`}>
+                  {/* Front Side */}
+                  <div className="flip-card-front">
+                    <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-4">
+                      <MapPin className="w-8 h-8" />
+                    </div>
+                    <h3 className="font-apple font-bold text-lg text-foreground text-center px-4 leading-tight">
+                      Based in Delhi, Serving the World
+                    </h3>
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                        Click to learn more
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Back Side */}
+                  <div className="flip-card-back">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-apple font-bold text-sm text-foreground">
+                        Based in Delhi
+                      </h3>
+                      <button className="text-muted-foreground hover:text-foreground">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto scrollbar-visible">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2 pr-2">
+                        <ul className="space-y-1 text-left">
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Strategically located in New Delhi's business hub</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Serving 100+ clients across India and international markets</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Digitally enabled service delivery with secure document sharing</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>Real-time reporting tools accessible anywhere, anytime</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mt-4">
+                      <div className="text-xs text-primary font-medium">
+                        Click anywhere to close
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Based in Delhi, Serving the World</h3>
-                <ul className="font-apple text-muted-foreground space-y-2">
-                  <li>• Strategically located in New Delhi's business hub</li>
-                  <li>• Serving 100+ clients across India and international markets</li>
-                  <li>• Digitally enabled service delivery with secure document sharing</li>
-                  <li>• Real-time reporting tools accessible anywhere, anytime</li>
-                </ul>
               </div>
 
               {/* Our Promise */}
-              <div className="card-hover p-8 bg-card border border-border/20 rounded-xl">
-                <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-8 h-8" />
+              <div className="flip-card" onClick={() => toggleCard(3)}>
+                <div className={`flip-card-inner ${flippedCards.includes(3) ? 'flipped' : ''}`}>
+                  {/* Front Side */}
+                  <div className="flip-card-front">
+                    <div className="w-16 h-16 bg-foreground text-background rounded-xl flex items-center justify-center mb-4">
+                      <Shield className="w-8 h-8" />
+                    </div>
+                    <h3 className="font-apple font-bold text-lg text-foreground text-center px-4 leading-tight">
+                      Our Promise – Compliance. Clarity. Confidence.
+                    </h3>
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                        Click to learn more
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Back Side */}
+                  <div className="flip-card-back">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-apple font-bold text-sm text-foreground">
+                        Our Promise
+                      </h3>
+                      <button className="text-muted-foreground hover:text-foreground">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto scrollbar-visible">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2 pr-2">
+                        <div className="bg-muted/50 border-l-4 border-foreground pl-4 py-3 mb-3 rounded-r-lg">
+                          <blockquote className="font-apple text-xs text-foreground font-medium italic">
+                            "You focus on building, let us ensure compliance"
+                          </blockquote>
+                        </div>
+                        <p className="text-left">
+                          Trusted by a diverse portfolio of clients, we craft bespoke financial strategies aligned with your goals through a transparent, tech-enabled, client-first approach.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mt-4">
+                      <div className="text-xs text-primary font-medium">
+                        Click anywhere to close
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Our Promise – Compliance. Clarity. Confidence.</h3>
-                <div className="bg-muted/50 border-l-4 border-foreground pl-6 py-4 mb-4 rounded-r-lg">
-                  <blockquote className="font-apple text-lg text-foreground font-medium italic">
-                    "You focus on building, let us ensure compliance"
-                  </blockquote>
-                </div>
-                <p className="font-apple text-muted-foreground text-sm">
-                  Trusted by a diverse portfolio of clients, we craft bespoke financial strategies aligned with your goals through a transparent, tech-enabled, client-first approach.
-                </p>
               </div>
             </div>
           </div>
