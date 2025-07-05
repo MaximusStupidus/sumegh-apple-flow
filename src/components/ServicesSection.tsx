@@ -203,11 +203,11 @@ const ServicesSection = () => {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalServices.map((service, index) => (
-              <div key={index} className="flip-card h-64" onClick={() => toggleCard(index)}>
+              <div key={index} className="flip-card" onClick={() => toggleCard(index)}>
                 <div className={`flip-card-inner ${flippedCards.includes(index) ? 'flipped' : ''}`}>
                   {/* Front Side */}
                   <div className="flip-card-front">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4">
                       {service.icon}
                     </div>
                     <h4 className="font-apple font-bold text-lg text-foreground text-center px-4 leading-tight">
@@ -222,32 +222,30 @@ const ServicesSection = () => {
                   
                   {/* Back Side */}
                   <div className="flip-card-back">
-                    <div className="h-full flex flex-col">
-                      <div className="flex items-center justify-between mb-3">
-                        <h4 className="font-apple font-bold text-sm text-foreground">
-                          {service.title}
-                        </h4>
-                        <button className="text-muted-foreground hover:text-foreground">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </button>
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-apple font-bold text-sm text-foreground">
+                        {service.title}
+                      </h4>
+                      <button className="text-muted-foreground hover:text-foreground">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2">
+                        {service.description.split('. ').map((sentence, idx) => (
+                          <p key={idx} className="text-left">
+                            {sentence}{idx < service.description.split('. ').length - 1 ? '.' : ''}
+                          </p>
+                        ))}
                       </div>
-                      
-                      <div className="flex-1 overflow-y-auto">
-                        <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2">
-                          {service.description.split('. ').map((sentence, idx) => (
-                            <p key={idx} className="text-justify">
-                              {sentence}{idx < service.description.split('. ').length - 1 ? '.' : ''}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="text-center mt-3">
-                        <div className="text-xs text-primary font-medium">
-                          Click anywhere to close
-                        </div>
+                    </div>
+                    
+                    <div className="text-center mt-4">
+                      <div className="text-xs text-primary font-medium">
+                        Click anywhere to close
                       </div>
                     </div>
                   </div>

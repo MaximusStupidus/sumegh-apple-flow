@@ -199,10 +199,11 @@
   .flip-card {
     @apply relative w-full cursor-pointer;
     perspective: 1000px;
+    height: 16rem; /* Fixed height to prevent jumping */
   }
   
   .flip-card-inner {
-    @apply relative w-full h-full transition-transform duration-700;
+    @apply relative w-full h-full transition-transform duration-600 ease-in-out;
     transform-style: preserve-3d;
   }
   
@@ -212,16 +213,17 @@
   
   .flip-card-front,
   .flip-card-back {
-    @apply absolute w-full h-full bg-card border border-border/20 rounded-xl p-6 flex flex-col items-center justify-center shadow-card hover:shadow-apple transition-shadow duration-300;
+    @apply absolute inset-0 w-full h-full bg-card border border-border/20 rounded-xl shadow-card hover:shadow-apple transition-shadow duration-300;
     backface-visibility: hidden;
-  }
-  
-  .flip-card-back {
-    transform: rotateY(180deg);
-    @apply items-start justify-start;
+    -webkit-backface-visibility: hidden;
   }
   
   .flip-card-front {
-    @apply relative;
+    @apply flex flex-col items-center justify-center p-6;
+  }
+  
+  .flip-card-back {
+    @apply flex flex-col p-6;
+    transform: rotateY(180deg);
   }
 }
