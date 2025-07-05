@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const NavigationBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,12 +67,68 @@ const NavigationBar = () => {
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden p-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200">
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-2 bg-card/95 backdrop-blur-md rounded-2xl border border-border/20 shadow-apple overflow-hidden">
+          <div className="flex flex-col p-4 space-y-2">
+            <button 
+              onClick={() => {
+                scrollToSection('about');
+                setIsMobileMenuOpen(false);
+              }}
+              className="px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200 text-left"
+            >
+              About Us
+            </button>
+            <button 
+              onClick={() => {
+                scrollToSection('story');
+                setIsMobileMenuOpen(false);
+              }}
+              className="px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200 text-left"
+            >
+              Our Story
+            </button>
+            <button 
+              onClick={() => {
+                scrollToSection('services');
+                setIsMobileMenuOpen(false);
+              }}
+              className="px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200 text-left"
+            >
+              Services
+            </button>
+            <button 
+              onClick={() => {
+                scrollToSection('blog');
+                setIsMobileMenuOpen(false);
+              }}
+              className="px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200 text-left"
+            >
+              Blog
+            </button>
+            <button 
+              onClick={() => {
+                scrollToSection('contact');
+                setIsMobileMenuOpen(false);
+              }}
+              className="btn-primary text-sm px-6 py-3 mt-2"
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
