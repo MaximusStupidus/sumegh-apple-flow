@@ -233,8 +233,8 @@ const ServicesSection = () => {
                       </button>
                     </div>
                     
-                    <div className="flex-1 overflow-y-auto">
-                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2">
+                    <div className="flex-1 overflow-y-auto scrollbar-visible">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-2 pr-2">
                         {service.description.split('. ').map((sentence, idx) => (
                           <p key={idx} className="text-left">
                             {sentence}{idx < service.description.split('. ').length - 1 ? '.' : ''}
