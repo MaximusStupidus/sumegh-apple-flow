@@ -8,7 +8,7 @@ const HeroSection = () => {
           Your Trusted
           <span className="bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent"> Financial</span>
           <br />
-          Advisory Partner
+          And Legal Advisory Partners
         </h1>
         
         

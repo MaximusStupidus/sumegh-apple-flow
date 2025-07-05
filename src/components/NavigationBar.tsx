@@ -24,15 +24,12 @@ const NavigationBar = () => {
       isScrolled ? 'bg-card/95 backdrop-blur-md shadow-apple border-b border-border/20' : 'bg-card/80 backdrop-blur-sm'
     } px-6 lg:px-8 py-4`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center">
           <img 
             src="/lovable-uploads/573b3fb0-b3f3-4c16-92f7-d49dc424a501.png" 
             alt="Sumegh Consultancy Logo" 
             className="w-8 h-8"
           />
-          <div className="font-apple font-bold text-2xl text-foreground">
-            Sumegh
-          </div>
         </div>
         
         <div className="hidden md:flex items-center space-x-1">
