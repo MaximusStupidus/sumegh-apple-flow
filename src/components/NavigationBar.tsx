@@ -20,10 +20,10 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-card/95 backdrop-blur-md shadow-apple border-b border-border/20' : 'bg-card/80 backdrop-blur-sm'
-    } px-6 lg:px-8 py-4`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+      <div className={`transition-all duration-300 ${
+        isScrolled ? 'bg-card/95 backdrop-blur-md shadow-apple' : 'bg-card/90 backdrop-blur-sm shadow-card'
+      } px-6 lg:px-8 py-4 rounded-2xl border border-border/20 flex items-center justify-between min-w-fit`}>
         <div className="flex items-center">
           <img 
             src="/lovable-uploads/573b3fb0-b3f3-4c16-92f7-d49dc424a501.png" 
