@@ -1,10 +1,19 @@
 import { useState } from 'react';
 
 const ServicesSection = () => {
-  const [flippedCards, setFlippedCards] = useState<number[]>([]);
+  const [flippedCoreCards, setFlippedCoreCards] = useState<number[]>([]);
+  const [flippedAdditionalCards, setFlippedAdditionalCards] = useState<number[]>([]);
 
-  const toggleCard = (index: number) => {
-    setFlippedCards(prev => 
+  const toggleCoreCard = (index: number) => {
+    setFlippedCoreCards(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const toggleAdditionalCard = (index: number) => {
+    setFlippedAdditionalCards(prev => 
       prev.includes(index) 
         ? prev.filter(i => i !== index)
         : [...prev, index]
@@ -170,30 +179,60 @@ const ServicesSection = () => {
           <h3 className="font-apple font-bold text-3xl text-center text-foreground mb-12">
             Our Core Services
           </h3>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {coreServices.map((service, index) => (
-              <div key={index} className="card-hover p-8">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary flex-shrink-0">
-                    {service.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-apple font-bold text-xl text-foreground mb-3">
+              <div key={index} className="flip-card" onClick={() => toggleCoreCard(index)}>
+                <div className={`flip-card-inner ${flippedCoreCards.includes(index) ? 'flipped' : ''}`}>
+                  {/* Front Side */}
+                  <div className="flip-card-front">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4">
+                      {service.icon}
+                    </div>
+                    <h4 className="font-apple font-bold text-lg text-foreground text-center px-4 leading-tight">
                       {service.title}
                     </h4>
-                    <p className="font-apple text-muted-foreground mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div>
-                      <h5 className="font-apple font-semibold text-foreground mb-2">Benefits:</h5>
-                      <ul className="space-y-1">
-                        {service.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-center gap-2 font-apple text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="text-xs text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                        Click to learn more
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Back Side */}
+                  <div className="flip-card-back">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-apple font-bold text-sm text-foreground">
+                        {service.title}
+                      </h4>
+                      <button className="text-muted-foreground hover:text-foreground">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto scrollbar-visible">
+                      <div className="font-apple text-xs text-muted-foreground leading-relaxed space-y-3 pr-2">
+                        <p className="text-left">{service.description}</p>
+                        
+                        <div>
+                          <h5 className="font-apple font-semibold text-foreground mb-2 text-xs">Benefits:</h5>
+                          <ul className="space-y-1">
+                            {service.benefits.map((benefit, benefitIndex) => (
+                              <li key={benefitIndex} className="flex items-start gap-2 font-apple text-xs text-muted-foreground">
+                                <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                                <span className="text-left">{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mt-4">
+                      <div className="text-xs text-primary font-medium">
+                        Click anywhere to close
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -212,8 +251,8 @@ const ServicesSection = () => {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalServices.map((service, index) => (
-              <div key={index} className="flip-card" onClick={() => toggleCard(index)}>
-                <div className={`flip-card-inner ${flippedCards.includes(index) ? 'flipped' : ''}`}>
+              <div key={index} className="flip-card" onClick={() => toggleAdditionalCard(index)}>
+                <div className={`flip-card-inner ${flippedAdditionalCards.includes(index) ? 'flipped' : ''}`}>
                   {/* Front Side */}
                   <div className="flip-card-front">
                     <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4">
