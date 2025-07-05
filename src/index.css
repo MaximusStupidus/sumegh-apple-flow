@@ -194,4 +194,34 @@
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Flip Card Animation */
+  .flip-card {
+    @apply relative w-full cursor-pointer;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    @apply relative w-full h-full transition-transform duration-700;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    @apply absolute w-full h-full bg-card border border-border/20 rounded-xl p-6 flex flex-col items-center justify-center shadow-card hover:shadow-apple transition-shadow duration-300;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+    @apply items-start justify-start;
+  }
+  
+  .flip-card-front {
+    @apply relative;
+  }
 }
