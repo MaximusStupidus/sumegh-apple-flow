@@ -1,5 +1,28 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+const blogPosts = [
+  {
+    id: 1,
+    title: "Essential Tax Planning Strategies for Startups in 2024",
+    excerpt: "Discover the latest tax optimization techniques that can save your startup thousands while ensuring full compliance with current regulations.",
+    author: "CA Priya Sharma",
+    date: "March 15, 2024",
+    readTime: "5 min read",
+    category: "Tax Planning",
+    image: "/api/placeholder/400/250"
+  },
+  {
+    id: 2,
+    title: "Navigating GST Compliance: A Complete Guide for Tech Companies",
+    excerpt: "From registration to returns filing, learn everything you need to know about GST compliance for technology businesses operating in India.",
+    author: "CS Rajesh Kumar",
+    date: "March 10, 2024",
+    readTime: "8 min read",
+    category: "GST & Compliance",
+    image: "/api/placeholder/400/250"
+  }
+];
 
 const BlogSection = () => {
   return (
@@ -15,35 +38,44 @@ const BlogSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {[1, 2].map((index) => (
-            <article key={index} className="card-hover bg-card border border-border/20 rounded-xl overflow-hidden group">
+          {blogPosts.map((post) => (
+            <article key={post.id} className="card-hover bg-card border border-border/20 rounded-xl overflow-hidden group">
               <div className="aspect-video bg-muted/50 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">📝</div>
-                  <div className="text-muted-foreground text-sm">Blog Image Coming Soon</div>
-                </div>
+                <div className="text-muted-foreground text-sm">Blog Image Placeholder</div>
               </div>
               
               <div className="p-6">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                   <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                    Coming Soon
+                    {post.category}
                   </span>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {post.date}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <User className="w-4 h-4" />
+                    {post.author}
+                  </div>
                 </div>
                 
                 <h3 className="font-apple font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">
-                  Exciting Content Coming Soon
+                  {post.title}
                 </h3>
                 
                 <p className="font-apple text-muted-foreground mb-4 leading-relaxed">
-                  We're working on creating valuable insights and expert advice to help you navigate the complex world of financial consulting and business compliance.
+                  {post.excerpt}
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Stay tuned</span>
-                  <div className="inline-flex items-center gap-2 text-muted-foreground font-medium text-sm">
-                    Coming Soon
-                  </div>
+                  <span className="text-sm text-muted-foreground">{post.readTime}</span>
+                  <Link 
+                    to={`/blog/${post.id}`}
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium text-sm transition-colors group"
+                  >
+                    Read More
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
             </article>
@@ -51,9 +83,13 @@ const BlogSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <div className="btn-secondary text-lg px-8 py-3 inline-flex items-center gap-2 opacity-50 cursor-not-allowed">
-            View All Articles (Coming Soon)
-          </div>
+          <Link 
+            to="/blog" 
+            className="btn-secondary text-lg px-8 py-3 inline-flex items-center gap-2"
+          >
+            View All Articles
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>
