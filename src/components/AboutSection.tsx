@@ -1,4 +1,4 @@
-import { Users, Briefcase, MapPin, Shield } from 'lucide-react';
+import { Users, Briefcase, MapPin, Shield, Eye, Target } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -17,6 +17,31 @@ const AboutSection = () => {
               <p className="font-apple text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto mt-4">
                 At Sumegh, we bring over two decades of trusted experience in accounting, taxation, and corporate advisory. 
               </p>
+            </div>
+
+            {/* Vision and Mission */}
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {/* Vision */}
+              <div className="card-hover p-8 bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-xl">
+                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-xl flex items-center justify-center mb-6">
+                  <Eye className="w-8 h-8" />
+                </div>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Our Vision</h3>
+                <p className="font-apple text-muted-foreground leading-relaxed">
+                  To redefine how startups access legal and financial expertise — by offering thoughtful, end-to-end solutions that drive compliance, growth, and long-term value.
+                </p>
+              </div>
+
+              {/* Mission */}
+              <div className="card-hover p-8 bg-gradient-to-br from-secondary/5 to-secondary/10 border border-secondary/20 rounded-xl">
+                <div className="w-16 h-16 bg-secondary text-secondary-foreground rounded-xl flex items-center justify-center mb-6">
+                  <Target className="w-8 h-8" />
+                </div>
+                <h3 className="font-apple font-bold text-2xl text-foreground mb-4">Our Mission</h3>
+                <p className="font-apple text-muted-foreground leading-relaxed">
+                  To empower businesses with clear, expert-driven legal and financial guidance—so they can focus on building, while we take care of the backend.
+                </p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
