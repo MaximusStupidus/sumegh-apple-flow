@@ -43,7 +43,7 @@ const StorySection = () => {
                 </svg>
               </div>
               <h4 className="font-apple font-semibold text-xl text-foreground mb-2">Expertise</h4>
-              <p className="font-apple text-muted-foreground">Deep knowledge across financial disciplines</p>
+              <p className="font-apple text-muted-foreground">Deep knowledge across disciplines</p>
             </div>
 
             <div className="text-center">
@@ -53,7 +53,7 @@ const StorySection = () => {
                 </svg>
               </div>
               <h4 className="font-apple font-semibold text-xl text-foreground mb-2">Excellence</h4>
-              <p className="font-apple text-muted-foreground">Committed to delivering exceptional results</p>
+              <p className="font-apple text-muted-foreground">Committed to delivering results</p>
             </div>
           </div>
         </div>
