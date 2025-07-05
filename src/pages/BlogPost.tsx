@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 const blogData = {
   1: {
     title: "Essential Tax Planning Strategies for Startups in 2024",
-    author: "CA Priya Sharma",
+    author: "CA Vimal Parakh",
     date: "March 15, 2024",
     readTime: "5 min read",
     category: "Tax Planning",
@@ -49,7 +49,7 @@ const blogData = {
   },
   2: {
     title: "Navigating GST Compliance: A Complete Guide for Tech Companies",
-    author: "CS Rajesh Kumar",
+    author: "CA Vimal Parakh",
     date: "March 10, 2024",
     readTime: "8 min read",
     category: "GST & Compliance",

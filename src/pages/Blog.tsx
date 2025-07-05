@@ -6,21 +6,21 @@ const blogPosts = [
     id: 1,
     title: "Essential Tax Planning Strategies for Startups in 2024",
     excerpt: "Discover the latest tax optimization techniques that can save your startup thousands while ensuring full compliance with current regulations.",
-    author: "CA Priya Sharma",
+    author: "CA Vimal Parakh",
     date: "March 15, 2024",
     readTime: "5 min read",
     category: "Tax Planning",
-    image: "/api/placeholder/400/250"
+    image: "/lovable-uploads/1322f4bc-b908-442f-9a30-289037702c28.png"
   },
   {
     id: 2,
     title: "Navigating GST Compliance: A Complete Guide for Tech Companies",
     excerpt: "From registration to returns filing, learn everything you need to know about GST compliance for technology businesses operating in India.",
-    author: "CS Rajesh Kumar",
+    author: "CA Vimal Parakh",
     date: "March 10, 2024",
     readTime: "8 min read",
     category: "GST & Compliance",
-    image: "/api/placeholder/400/250"
+    image: "/lovable-uploads/0d677034-d954-4e5a-a261-44d041675d06.png"
   }
 ];
 
@@ -68,8 +68,12 @@ const Blog = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article key={post.id} className="card-hover bg-card border border-border/20 rounded-xl overflow-hidden group">
-                <div className="aspect-video bg-muted/50 flex items-center justify-center">
-                  <div className="text-muted-foreground text-sm">Blog Image Placeholder</div>
+                <div className="aspect-video bg-muted/50 flex items-center justify-center p-4">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
                 
                 <div className="p-6">
