@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import LOGO from '@/assets/LOGO.png';   // ← alias version
 
 const NavigationBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,7 @@ const NavigationBar = () => {
       } px-6 lg:px-8 py-4 rounded-2xl border border-border/20 flex items-center justify-between w-full`}>
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/573b3fb0-b3f3-4c16-92f7-d49dc424a501.png" 
+            src={LOGO} 
             alt="Sumegh Consultancy Logo" 
             className="w-8 h-8"
           />

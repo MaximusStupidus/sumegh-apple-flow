@@ -1,5 +1,7 @@
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import GST from '@/assets/GST.png';
+import TAX from '@/assets/TAX.png';
 
 const blogPosts = [
   {
@@ -10,7 +12,7 @@ const blogPosts = [
     date: "March 15, 2024",
     readTime: "5 min read",
     category: "Tax Planning",
-    image: "/lovable-uploads/1322f4bc-b908-442f-9a30-289037702c28.png"
+    image: TAX
   },
   {
     id: 2,
@@ -20,7 +22,7 @@ const blogPosts = [
     date: "March 10, 2024",
     readTime: "8 min read",
     category: "GST & Compliance",
-    image: "/lovable-uploads/0d677034-d954-4e5a-a261-44d041675d06.png"
+    image: GST
   }
 ];
 
