@@ -12,7 +12,7 @@ const Footer = () => {
               Sumegh Consultancy
             </div>
             <p className="font-apple text-background/70 text-sm leading-relaxed">
-              "You focus on the hardwork, we will ensure compliance"
+              "You focus on building, let us ensure compliance"
             </p>
           </div>
 
