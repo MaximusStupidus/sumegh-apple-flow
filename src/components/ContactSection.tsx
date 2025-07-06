@@ -11,19 +11,70 @@ const ContactSection = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  /* NEW: sending-state for the spinner / disable */
+  const [sending, setSending] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prev => ({
+  //     ...prev,
+  //     [name]: value
+  //   }));
+  // };
+
+  /* NEW: AJAX submit to FormSubmit - no redirect */
+  /* ---------- 100 % copy-and-paste ---------- */
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    console.log('Form submitted:', formData);
+    setSending(true);
+
+    // everything FormSubmit should receive
+    const payload = {
+      ...formData,                         // name, email, phone, …
+      _subject:  'New enquiry from sumeghconsultancy.com',
+      _template: 'table',
+      _captcha:  'false',
+    };
+
+    try {
+      const res = await fetch(
+        'https://formsubmit.co/ajax/client@sumeghconsultancy.com',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (res.ok) {
+        setIsSubmitted(true);              // show Thank-you card
+        setFormData({                      // clear form
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: '',
+        });
+      } else {
+        alert('Oops — please try again.');
+      }
+    } catch {
+      alert('Network error — please try later.');
+    }
+
+    setSending(false);
   };
+  /* ---------- end copy ---------- */
+
+
 
   return (
     <section id="contact" className="section-padding bg-background">
@@ -134,10 +185,20 @@ const ContactSection = () => {
                   Send us a Message
                 </h3>
                 
-                <form
-                  onSubmit={handleSubmit}
+                {/* <form
+                  action="https://formsubmit.co/client@sumeghconsultancy.com"
+                  method="POST"
                   className="space-y-6"
-                >
+                > */}
+                <form onSubmit={handleSubmit} className="space-y-6">
+
+                  {/* <input type="hidden" name="_subject"  value="New enquiry from sumeghconsultancy.com" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha"  value="false" /> */}
+                  {/* <input type="hidden" name="_subject"  value="New enquiry from sumeghconsultancy.com" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha"  value="false" /> */}
+
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block font-apple font-medium text-foreground mb-2">
@@ -243,11 +304,18 @@ const ContactSection = () => {
                     ></textarea>
                   </div>
 
-                  <button
+                  {/* <button
                     type="submit"
                     className="btn-primary w-full text-lg py-4"
                   >
                     Send Message
+                  </button> */}
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    className="btn-primary w-full text-lg py-4"
+                  >
+                    {sending ? 'Sending…' : 'Send Message'}
                   </button>
                 </form>
               </>
