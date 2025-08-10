@@ -87,15 +87,15 @@ const ServicesSection = () => {
   ];
 
   const additionalServices = [
-    {
-      title: "General Corporate - M&A/PE and VC",
-      description: "End-to-end legal advisory across the corporate lifecycle — from formation to funding, structuring to scaling, and exit to acquisition. Our Corporate & M&A practice advises startups, founders, investors, and growth-stage companies on a wide spectrum of strategic transactions, ensuring legal precision, commercial foresight, and regulatory compliance at every step. Whether you're closing a venture capital round, negotiating a joint venture, or structuring a complex M&A deal, we provide tailored counsel that aligns with your business goals, investor expectations, and risk appetite.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V9a2 2 0 11-4 0V6m0 0V4.5a2 2 0 10-4 0V6m4 0H8m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9" />
-        </svg>
-      )
-    },
+    // {
+    //   title: "General Corporate - M&A/PE and VC",
+    //   description: "End-to-end legal advisory across the corporate lifecycle — from formation to funding, structuring to scaling, and exit to acquisition. Our Corporate & M&A practice advises startups, founders, investors, and growth-stage companies on a wide spectrum of strategic transactions, ensuring legal precision, commercial foresight, and regulatory compliance at every step. Whether you're closing a venture capital round, negotiating a joint venture, or structuring a complex M&A deal, we provide tailored counsel that aligns with your business goals, investor expectations, and risk appetite.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V9a2 2 0 11-4 0V6m0 0V4.5a2 2 0 10-4 0V6m4 0H8m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9" />
+    //     </svg>
+    //   )
+    // },
     {
       title: "Company Registration & Compliance",
       description: "Complete assistance with company formation, registration, and ongoing compliance requirements. We handle everything from selecting the right business structure to ensuring continuous regulatory compliance. Our services include incorporation procedures, director appointments, share capital management, annual filing requirements, board resolutions, and maintaining statutory registers. We also provide guidance on corporate governance best practices and help you navigate complex regulatory frameworks across different jurisdictions.",
@@ -105,60 +105,107 @@ const ServicesSection = () => {
         </svg>
       )
     },
+    // {
+    //   title: "Payroll Processing",
+    //   description: "End-to-end payroll management including PF and ESI compliances. Our comprehensive payroll services cover salary processing, tax deductions, statutory compliance, employee benefits administration, and regulatory reporting. We ensure accurate calculations, timely payments, and full compliance with labor laws, PF regulations, ESI requirements, and professional tax obligations. Our automated systems provide detailed payroll reports, employee self-service portals, and seamless integration with your HR and accounting systems.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+    //     </svg>
+    //   )
+    // },
+    // {
+    //   title: "RBI Liasoning",
+    //   description: "Specialized services for NBFCs regarding RBI compliance and requirements. We provide comprehensive support for regulatory submissions, license applications, compliance monitoring, and ongoing liaison with RBI authorities. Our services include CRAR reporting, ALM guidelines compliance, prudential norms adherence, fair practices code implementation, and regulatory audit support. We help NBFCs navigate complex regulatory landscapes, ensure timely compliance reporting, and maintain strong relationships with regulatory authorities.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    //     </svg>
+    //   )
+    // },
+    // {
+    //   title: "Startup Consulting",
+    //   description: "Tailored guidance for new businesses, from formation to financial strategy. Our startup consulting services encompass business plan development, funding strategy, regulatory compliance, tax optimization, corporate structuring, and growth planning. We help entrepreneurs navigate the complex startup ecosystem, connect with investors, understand regulatory requirements, and build scalable business models. Our team provides mentorship on financial management, operational efficiency, risk management, and strategic decision-making to ensure sustainable growth.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+    //     </svg>
+    //   )
+    // },
+    // {
+    //   title: "Virtual CFO Services",
+    //   description: "Professional financial oversight without the cost of a full-time executive. Our Virtual CFO services provide strategic financial leadership, including financial planning and analysis, cash flow management, budget preparation, financial reporting, risk assessment, and investor relations support. We offer part-time or project-based CFO expertise to help businesses make informed financial decisions, improve operational efficiency, secure funding, and achieve sustainable growth while maintaining cost-effectiveness.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    //     </svg>
+    //   )
+    // },
+    // {
+    //   title: "Arbitration & Mediation",
+    //   description: "Company arbitration and mediation services to resolve business disputes. We provide comprehensive dispute resolution services including contract disputes, partnership disagreements, commercial conflicts, and regulatory matters. Our experienced team offers mediation, arbitration, and negotiation services to help businesses resolve conflicts efficiently and cost-effectively. We also provide legal advisory on dispute prevention, contract drafting, risk mitigation strategies, and alternative dispute resolution mechanisms to minimize future conflicts.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16l3-1m-3 1l-3-1" />
+    //     </svg>
+    //   )
+    // },
+    // {
+    //   title: "Employment and Labour Laws",
+    //   description: "Our services include advising on employment contracts, offer letters, handbooks, ESOP structuring, POSH Compliance etc. We provide comprehensive guidance on labor law compliance, employee rights, workplace policies, and regulatory requirements. Our team helps businesses navigate complex employment regulations, draft legally sound employment agreements, implement fair workplace practices, and ensure compliance with statutory obligations including provident fund, gratuity, and other employee benefits.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    //     </svg>
+    //   )
+    // }
+    // {
+    //   title: "Accounting & Bookkeeping",
+    //   description: "End-to-end bookkeeping with monthly closes, ledger management, accounts payable/receivable, bank and cash reconciliations, and clean financial statements (P&L, Balance Sheet, Cash Flow). We also set up chart of accounts, implement workflows and controls, build MIS dashboards, and support audit readiness with schedules and documentation.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <rect x="4" y="3" width="16" height="18" rx="2" strokeWidth={2} />
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h8M8 11h8M8 15h4M14 15h2" />
+    //     </svg>
+    //   )
+    // },
+
     {
-      title: "Payroll Processing",
-      description: "End-to-end payroll management including PF and ESI compliances. Our comprehensive payroll services cover salary processing, tax deductions, statutory compliance, employee benefits administration, and regulatory reporting. We ensure accurate calculations, timely payments, and full compliance with labor laws, PF regulations, ESI requirements, and professional tax obligations. Our automated systems provide detailed payroll reports, employee self-service portals, and seamless integration with your HR and accounting systems.",
+      title: "Project Financing & Loan Syndication",
+      description: "Comprehensive support for raising project debt: feasibility/DPR review, financial modelling, CMA data, lender mapping, and term-sheet negotiations. We coordinate with banks/NBFCs, manage documentation and due diligence, structure covenants/DSRA, and drive end-to-end closure until disbursement while tracking post-sanction compliance.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4l7 4H5l7-4z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 20h14" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20V10M12 20V10M17 20V10" />
         </svg>
       )
     },
+
+    // {
+    //   title: "Tax Planning & Filing",
+    //   description: "Strategic tax planning for individuals and businesses with quarterly/annual compliance. We handle return preparation and e-filing (income tax, TDS), advance tax computations, notice responses and representations, GST registrations and periodic returns, and optimise deductions, exemptions, and credits while staying fully compliant.",
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 3h8l4 4v14H7V3z" />
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 3v6h6" />
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 14l2 2 4-4" />
+    //     </svg>
+    //   )
+    // },
+
     {
-      title: "RBI Liasoning",
-      description: "Specialized services for NBFCs regarding RBI compliance and requirements. We provide comprehensive support for regulatory submissions, license applications, compliance monitoring, and ongoing liaison with RBI authorities. Our services include CRAR reporting, ALM guidelines compliance, prudential norms adherence, fair practices code implementation, and regulatory audit support. We help NBFCs navigate complex regulatory landscapes, ensure timely compliance reporting, and maintain strong relationships with regulatory authorities.",
+      title: "NBFC Consulting",
+      description: "Advisory for NBFC setup and scale: RBI licensing and change-in-control approvals, business model and product design, policy framework (KYC/AML, Fair Practices, collections), governance and risk, statutory returns, and audits. We also help select/core systems, set reporting MIS, and align operations to evolving RBI norms.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13l2 2 4-4" />
         </svg>
       )
     },
-    {
-      title: "Startup Consulting",
-      description: "Tailored guidance for new businesses, from formation to financial strategy. Our startup consulting services encompass business plan development, funding strategy, regulatory compliance, tax optimization, corporate structuring, and growth planning. We help entrepreneurs navigate the complex startup ecosystem, connect with investors, understand regulatory requirements, and build scalable business models. Our team provides mentorship on financial management, operational efficiency, risk management, and strategic decision-making to ensure sustainable growth.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
-    },
-    {
-      title: "Virtual CFO Services",
-      description: "Professional financial oversight without the cost of a full-time executive. Our Virtual CFO services provide strategic financial leadership, including financial planning and analysis, cash flow management, budget preparation, financial reporting, risk assessment, and investor relations support. We offer part-time or project-based CFO expertise to help businesses make informed financial decisions, improve operational efficiency, secure funding, and achieve sustainable growth while maintaining cost-effectiveness.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-        </svg>
-      )
-    },
-    {
-      title: "Arbitration & Mediation",
-      description: "Company arbitration and mediation services to resolve business disputes. We provide comprehensive dispute resolution services including contract disputes, partnership disagreements, commercial conflicts, and regulatory matters. Our experienced team offers mediation, arbitration, and negotiation services to help businesses resolve conflicts efficiently and cost-effectively. We also provide legal advisory on dispute prevention, contract drafting, risk mitigation strategies, and alternative dispute resolution mechanisms to minimize future conflicts.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16l3-1m-3 1l-3-1" />
-        </svg>
-      )
-    },
-    {
-      title: "Employment and Labour Laws",
-      description: "Our services include advising on employment contracts, offer letters, handbooks, ESOP structuring, POSH Compliance etc. We provide comprehensive guidance on labor law compliance, employee rights, workplace policies, and regulatory requirements. Our team helps businesses navigate complex employment regulations, draft legally sound employment agreements, implement fair workplace practices, and ensure compliance with statutory obligations including provident fund, gratuity, and other employee benefits.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
-    }
+
+
   ];
 
   return (
